@@ -24,4 +24,9 @@ The given diagram demonstrated the image processing method that used to extract 
 ![System Diagram](image_processing.png)
 
 
+The second component focuses on training instance segmentation models using both RGB and RGB-D data. In our publication, we evaluated SAM, YOLOv8, and Mask R-CNN across various backbones on our custom poultry dataset. While comprehensive results are detailed in the paper, this repository highlights the best-performing configuration—Mask R-CNN trained on RGB-D data—which demonstrated the most accurate segmentation performance.
+
+
+
+
 
