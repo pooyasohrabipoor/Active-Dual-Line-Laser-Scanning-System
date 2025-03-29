@@ -11,7 +11,12 @@ When an object is introduced into the field, the laser line shifts from its base
 
 This shift is used to compute depth, enabling 3D surface profiling.
 
+The given Diagram provides the hardware system setup
+
 The given diagram demonstrated the process:
+![System Diagram](image_processing.png)
 
 ![System Diagram](image_processing.png)
+
+
 
