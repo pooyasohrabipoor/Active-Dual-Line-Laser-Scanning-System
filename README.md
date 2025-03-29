@@ -3,7 +3,7 @@ This repository is  my master’s research at the University of Arkansas, focusi
 
 The first component focuses on accurate depth estimation of chickens. While Intel RealSense cameras provide accessible depth data, their accuracy significantly degrades in challenging scenarios—particularly when chickens are piled together. This results in poor boundary definition and unreliable depth measurements, as illustrated in the provided image. To overcome these limitations, our system integrates a dual-line laser approach for enhanced precision in dense, occluded environments.
 
-![System Diagram](.png)
+![System Diagram](real_sense.png)
 
 The primary goal is to control a line laser using a servo-actuated mirror, enabling dynamic projection of the laser across a scene. By observing the displacement of the laser line relative to a calibrated baseline, the system can infer depth information — a key step in reconstructing 3D geometry of objects.
 Key Concepts:
