@@ -59,10 +59,6 @@ while True:
             
              print(read_signal)
             
-             
-            
-             
-            
              if read_signal== b'A': ## equivalent to A
                  p=p+1
                  k=k+1
@@ -85,8 +81,7 @@ while True:
                  height=grabResult.Height
                  
                  image = cv2.cvtColor(grabResult.Array, cv2.COLOR_BayerBG2RGB)
-#                  image_path='/home/pi/Desktop/saved_images/chicken/chicken.jpg'
-#                  image=cv2.imread(image_path)
+
                  
                  ################ delete countours that are too small or large ######################
                  R,G,B =cv2.split(image)
@@ -102,9 +97,6 @@ while True:
                           x, y, w, h = cv2.boundingRect(countour)
                           cv2.rectangle(bitwise_and_image, (x, y), (x + w, y + h), (0, 0, 0), thickness=cv2.FILLED)
                        
-                 
-              
-                 ######################################################################################
                  height, width = bitwise_and_image.shape
                  white_pixels=[]
                  for row_idx in range(first_row_laser, last_row_laser):
@@ -196,9 +188,7 @@ while True:
                  
                  u_all.append(u_list)
                  v_all.append(v_list)
-                 
-                # image_path=os.path.join('/home/pi/Desktop/saved_images/final_results/Images_of_new_method/laser up/raw_image',f'image_{counter}.png')
-                 #cv2.imwrite(image_path, image)
+
                  for i in range(len(v_list)):    
                     cv2.circle(image,(u_list[i],v_list[i]),1,(255,0,00),-1)
                  #cv2.imshow("base_line",image)
@@ -213,10 +203,10 @@ while True:
 
                  
                  ####### Saving Images ########################
-#                  
+                 
                  image_path = os.path.join('/home/pi/Desktop/saved_images/final_results/Images_of_new_method/laser up/Binary_baseline', f'image_{counter}.png')
                  cv2.imwrite(image_path, bitwise_and_image)
-#                 
+                
                  image_path=os.path.join('/home/pi/Desktop/saved_images/final_results/Images_of_new_method/laser up/Baseline',f'image_{counter}.png')
                  cv2.imwrite(image_path, image)
                  
