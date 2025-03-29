@@ -29,7 +29,7 @@ The second component focuses on training instance segmentation models using both
 The given illustration demonstrates the model artichture:
 ![System Diagram](Maskrcnn.png)
 
-The illustration below shows a sample image of stacked chickens, demonstrating how the addition of accurate laser-derived depth significantly enhances the performance of instance segmentation models.
+The illustration below shows a sample image of stacked chickens, demonstrating how the addition of accurate laser-derived depth significantly enhances the performance of instance segmentation models. To evaluate the quality of our instance segmentation results, we introduced a novel metric called center offset, which measures the distance between the center of the predicted mask and the center of the ground truth mask. A lower center offset indicates higher segmentation accuracy and better alignment with the actual object. This metric is particularly relevant for our downstream robotic application, where the robot is intended to grasp chickens precisely at their detected center points using the extracted coordinates.
 ![System Diagram](final.png)
 
 
