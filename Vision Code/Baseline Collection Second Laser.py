@@ -85,8 +85,7 @@ while True:
                  height=grabResult.Height
                  
                  image = cv2.cvtColor(grabResult.Array, cv2.COLOR_BayerBG2RGB)
-#                  image_path='/home/pi/Desktop/saved_images/chicken/chicken.jpg'
-#                  image=cv2.imread(image_path)
+
                  
                  ################ delete countours that are too small or large ######################
                  R,G,B =cv2.split(image)
@@ -103,13 +102,12 @@ while True:
                           cv2.rectangle(bitwise_and_image, (x, y), (x + w, y + h), (0, 0, 0), thickness=cv2.FILLED)
                        
                  
-                # cv2.imshow('Binary',bitwise_and_image)
-                 #cv2.waitKey(0)
+           
         
-                # kernel = np.ones((3, 3), np.uint8)
-                 #opened_image = cv2.morphologyEx(bitwise_and_image, cv2.MORPH_OPEN, kernel)
-                 #closed_image = cv2.morphologyEx(opened_image, cv2.MORPH_CLOSE, kernel)
-                 #bitwise_and_image=closed_image 
+                 kernel = np.ones((3, 3), np.uint8)
+                 opened_image = cv2.morphologyEx(bitwise_and_image, cv2.MORPH_OPEN, kernel)
+                 closed_image = cv2.morphologyEx(opened_image, cv2.MORPH_CLOSE, kernel)
+                 bitwise_and_image=closed_image 
                  ######################################################################################
                  height, width = bitwise_and_image.shape
                  white_pixels=[]
@@ -188,25 +186,13 @@ while True:
                       u_list.append(u_avg)
                       
                       v_list.append(row_idx)
-                     
-                        
-                        
-                        
-                        
-
-                    
-                
-           
-                      
-                       
-                         
+                                            
                          
                  
                  u_all.append(u_list)
                  v_all.append(v_list)
                  
-                # image_path=os.path.join('/home/pi/Desktop/saved_images/final_results/Images_of_new_method/laser up/raw_image',f'image_{counter}.png')
-                 #cv2.imwrite(image_path, image)
+           
                  for i in range(len(v_list)):    
                     cv2.circle(image,(u_list[i],v_list[i]),1,(255,0,00),-1)
                  #cv2.imshow("base_line",image)
@@ -221,10 +207,10 @@ while True:
 
                  
                  ####### Saving Images ########################
-#                  
+                  
                  image_path = os.path.join('/home/pi/Desktop/saved_images/final_results/Images_of_new_method/Laser_up_second/Baseline_Binary', f'image_{counter}.png')
                  cv2.imwrite(image_path, bitwise_and_image)
-#                 
+                 
                  image_path=os.path.join('/home/pi/Desktop/saved_images/final_results/Images_of_new_method/Laser_up_second/baseline',f'image_{counter}.png')
                  cv2.imwrite(image_path, image)
                  
@@ -233,7 +219,7 @@ while True:
                  
                  
                  if(p==255):
-                    # np.savez_compressed("tan_theta_list_duty_4 ",  tan_theta_all)
+                 
                      np.savez_compressed('vb_list', v_all)
                      np.savez_compressed('ub_list',  u_all)
                     
