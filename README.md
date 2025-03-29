@@ -30,7 +30,7 @@ The given illustration demonstrates the model artichture:
 ![System Diagram](Maskrcnn.png)
 
 The illustration below shows a sample image of stacked chickens, demonstrating how the addition of accurate laser-derived depth significantly enhances the performance of instance segmentation models.
-![System Diagram](Maskrcnn.png)
+![System Diagram](final.png)
 
 
 
