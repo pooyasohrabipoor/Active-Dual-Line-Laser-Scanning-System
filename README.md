@@ -13,5 +13,5 @@ This shift is used to compute depth, enabling 3D surface profiling.
 
 The given diagram demonstrated the process:
 
-![System Diagram](depth_sensing_diagram.png)
+![System Diagram](d.png)
 
