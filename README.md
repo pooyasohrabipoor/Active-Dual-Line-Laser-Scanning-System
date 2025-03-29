@@ -9,4 +9,4 @@ The baseline laser position is mapped based on known mirror angles.
 
 When an object is introduced into the field, the laser line shifts from its baseline.
 
-This shift is used to compute depth, enabling real-time 3D surface profiling.
+This shift is used to compute depth, enabling 3D surface profiling.
