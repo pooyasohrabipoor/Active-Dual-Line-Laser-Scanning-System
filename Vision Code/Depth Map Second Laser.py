@@ -76,16 +76,9 @@ while True:
         if ser.in_waiting>0 :
              
              read_signal=ser.read()
+                         
             
-          
-             
-             
-            
-             print(read_signal)
-            
-             
-            
-             
+             print(read_signal)            
         
              if read_signal== b'A': ## equivalent to A
                  vb_list=np.load('vb2.npy')
@@ -227,24 +220,12 @@ while True:
 ################################################################# FIND Z ########################################################
                  
                  
-                 
-                 #deltav = [0 for vo, v in zip(vo_list, vb)]
-                 
                
           
                  for uo,u in zip(uo_list,ub):
                      delta=u-uo
-                     
-                  
                          
                      deltau.append(delta)
-           
-                 
-             
-              
-                 
-                 
-                
                              
                  for i in range(len(uo_list)):
                      A=(-0.00045*uo_list[i]+0.37+0.0000116*vo_list[i])
@@ -256,36 +237,20 @@ while True:
                      zw=0.59*deltau[i]*tan/(-1+A_list[i]*tan)
                      #zw=-zw
                   
-                  
-                 
-                     
-
-                     
-                    #print("deltau",deltau[i])
-                    #print("deltav",deltav[i])
                      zw_list.append(zw)
-                        
-                    
-                               
-                 
-                 
-               
                
                  zw_all.append(zw_list)
                  
                
                      
                  for i in range (len(uo_list)):
-                     #if zw_list[i]>63:
-                      #  print(" v of which we have a fucking issue:",vo_list[i])
-                       # print(" u of which we have a fucking issue:",uo_list[i])
-                        #print("The fucking deltau here:",deltau[i])
-                        #print("FUCKING Z IS:",zw_list[i])
+                   
+
                         
                      Z[vo_list[i],uo_list[i]]=zw_list[i]
                  
                 
-                 #avg=np.average(zw_list[a:b])
+         
                 
                  ##### MARK baseline blue and object line green
                  
